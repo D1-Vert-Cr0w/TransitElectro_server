@@ -21,6 +21,6 @@ app.use('/filtr', filtrRoute);
 app.use('/categories', categoriesRoute);
 app.use('/subcategories', subCategoriesRoute);
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Server running at http://localhost:${port}`);
 });

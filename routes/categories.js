@@ -22,7 +22,7 @@ const categoriesRoute = express.Router();
                 image: imagesUrl
             }
             const сategory = new CategoriesModel(CategoriesData);
-            console.log(сategory );
+            console.log(сategory);
             await сategory .save()
             res.status(201).send(сategory );
          }
@@ -43,3 +43,4 @@ categoriesRoute.get('/list', async (req, res) =>{
 
 
  export default categoriesRoute;
+
