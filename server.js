@@ -7,16 +7,15 @@ import productRoute from "./routes/colection.js";
 import categoriesRoute from "./routes/categories.js";
 import filtrRoute from "./routes/filtr.js";
 import subCategoriesRoute from "./routes/subcategories.js";
+import https from "https";
+import fs from "fs";
+
+const app = express();
+
 //Подключение к Mongo
 app.use(cors());
 connectDB();
 connectCloudinary()
-
-const https = require('https');
-const fs = require('fs');
-const express = require('express');
-
-const app = express();
 
 // Чтение сертификата и ключа
 const options = {
