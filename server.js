@@ -7,7 +7,6 @@ import productRoute from "./routes/colection.js";
 import categoriesRoute from "./routes/categories.js";
 import filtrRoute from "./routes/filtr.js";
 import subCategoriesRoute from "./routes/subcategories.js";
-app.use(express.json())
 //Подключение к Mongo
 app.use(cors());
 connectDB();
@@ -25,19 +24,15 @@ const options = {
   cert: fs.readFileSync('cert.pem')
 };
 
-// Роут для проверки
-app.get('/', (req, res) => {
-  res.send('Hello HTTPS World!');
-});
+//Роуты
+app.use('/colection', productRoute);
+app.use('/filtr', filtrRoute);
+app.use('/categories', categoriesRoute);
+app.use('/subcategories', subCategoriesRoute);
 
 // Запуск HTTPS-сервера
 const PORT = 443; // Стандартный порт для HTTPS
 https.createServer(options, app).listen(PORT, () => {
   console.log(`Server running on https://localhost:${PORT}`);
 });
-//Роуты
-app.use('/colection', productRoute);
-app.use('/filtr', filtrRoute);
-app.use('/categories', categoriesRoute);
-app.use('/subcategories', subCategoriesRoute);
 
