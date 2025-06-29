@@ -19,8 +19,8 @@ connectCloudinary()
 
 // Чтение сертификата и ключа
 const options = {
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem')
+  key: fs.readFileSync('../key.pem'),
+  cert: fs.readFileSync('../cert.pem')
 };
 
 //Роуты
