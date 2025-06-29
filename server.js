@@ -13,7 +13,11 @@ import fs from "fs";
 const app = express();
 
 //Подключение к Mongo
-app.use(cors());
+app.use(cors({
+  origin: 'https:transit-electro-client.vercel.app', // или массив разрешенных доменов
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 connectDB();
 connectCloudinary()
 
