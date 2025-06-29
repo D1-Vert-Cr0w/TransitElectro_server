@@ -30,7 +30,7 @@ app.use('/categories', categoriesRoute);
 app.use('/subcategories', subCategoriesRoute);
 
 // Запуск HTTPS-сервера
-const PORT = 443; // Стандартный порт для HTTPS
+const PORT = 5000; // Стандартный порт для HTTPS
 https.createServer(options, app).listen(PORT, () => {
   console.log(`Server running on https://localhost:${PORT}`);
 });
